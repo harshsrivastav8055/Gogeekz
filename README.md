@@ -21,14 +21,9 @@ A full-stack **Immigration CRM (Customer Relationship Management)** application 
 - Checklist items specific to each category
 
 ### ✅ Authentication & Security
-- User login/logout using JWT + cookies
+- User login/logout using JWT + cookies implemented in backend beacuse not mentioned in problem statement to 
 - Protected routes and middleware (`isAuthenticated`)
-- Password reset via email with secure token link
 
-### ✅ Email Notifications
-- Nodemailer integration to send:
-  - Lead status updates
-  - Password reset links
 
 ### ✅ Frontend
 - Built with React + Lucide Icons
@@ -37,10 +32,9 @@ A full-stack **Immigration CRM (Customer Relationship Management)** application 
   - `LeadsList`
   - `LeadForm`
   - `LeadDetails`
-- Styled with custom CSS + optional Tailwind
+- Styled with custom CSS 
 
 ---
-
 ## 🛠️ Tech Stack
 
 | Layer       | Tech                          |
@@ -48,9 +42,7 @@ A full-stack **Immigration CRM (Customer Relationship Management)** application 
 | Frontend    | React, JSX, Lucide Icons      |
 | Backend     | Node.js, Express.js           |
 | Database    | MongoDB (Mongoose ODM)        |
-| Email       | Nodemailer                    |
 | Auth        | JWT, cookie-parser            |
-| Deployment  | Render, Vercel (optional)     |
 
 ---
 
@@ -64,10 +56,6 @@ A full-stack **Immigration CRM (Customer Relationship Management)** application 
 │   └── Lead.js
 ├── routes
 │   └── leadRoutes.js
-├── utils
-│   └── sendEmail.js
-├── middlewares
-│   └── auth.js
 ├── app.js
 ├── server.js
 
@@ -78,24 +66,18 @@ A full-stack **Immigration CRM (Customer Relationship Management)** application 
 │   ├── LeadForm.jsx
 │   └── LeadDetails.jsx
 ├── App.jsx
-├── index.js
-├── styles
-│   └── LeadsList.css
-\`\`\`
-
----
-
+├── main.js
 ## 📦 Installation
+#####
+Clone the project: git clone 
 
 ### Backend
-
 \`\`\`bash
 cd backend
 npm install
 \`\`\`
 
 ### Frontend
-
 \`\`\`bash
 cd frontend
 npm install
@@ -121,18 +103,6 @@ CLIENT_URL=http://localhost:5173
 
 ## 🧪 Sample Data for Testing
 
-Send a POST request to \`/api/leads/forgot-password\` with:
-
-\`\`\`json
-{
-  "email": "testuser@example.com"
-}
-\`\`\`
-
-Ensure this user exists in your MongoDB to test password reset and email flow.
-
----
-
 ## 🔁 API Routes Overview
 
 ### Leads Routes
@@ -143,34 +113,11 @@ POST    /api/leads               // Add new lead
 PUT     /api/leads/:id           // Update lead
 DELETE  /api/leads/:id           // Delete lead
 GET     /api/leads/:id           // Get lead by ID
-POST    /api/leads/:id/email     // Send status email
-POST    /api/leads/forgot-password // Password reset request
+POST    /:id/upload              // Upload The image
 \`\`\`
 
-### Auth Middleware
 
-Protected routes are wrapped with:
-\`\`\`js
-exports.isAuthenticated = (req, res, next) => {
-  const token = req.cookies.token;
-  if (!token) return res.status(401).json({ message: "Unauthorized" });
-  // decode and verify token logic
-};
-\`\`\`
 
----
-
-## 📧 SMTP (Nodemailer)
-
-Uses \`EMAIL_USER\` and \`EMAIL_PASS\` from \`.env\` to configure transport:
-
-\`\`\`js
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
-  }
 });
 \`\`\`
 
@@ -179,8 +126,6 @@ const transporter = nodemailer.createTransport({
 ## 🧑‍💻 Author
 
 **Harsh Srivastav**
-
----
 
 ## 📄 License
 
