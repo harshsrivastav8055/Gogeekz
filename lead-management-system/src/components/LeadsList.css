@@ -1,0 +1,240 @@
+/* LeadsList.css */
+
+.leads-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.leads-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.leads-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin: 0;
+}
+
+.add-lead-btn {
+  background-color: #059669;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.add-lead-btn:hover {
+  background-color: #047857;
+}
+
+.leads-table-container {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.leads-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-header {
+  background-color: #f9fafb;
+}
+
+.header-cell {
+  text-align: left;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  padding: 1rem 1.5rem;
+}
+
+.table-body {
+  background-color: white;
+}
+
+.table-row {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.2s ease;
+}
+
+.table-row:hover {
+  background-color: #f9fafb;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-cell {
+  padding: 1rem 1.5rem;
+  vertical-align: middle;
+}
+
+.lead-name {
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.lead-email,
+.lead-phone {
+  color: #4b5563;
+}
+
+.category-badge {
+  background-color: #dbeafe;
+  color: #1e40af;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.progress-bar {
+  width: 4rem;
+  background-color: #e5e7eb;
+  border-radius: 9999px;
+  height: 0.5rem;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background-color: #10b981;
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 0.875rem;
+  color: #4b5563;
+  min-width: 2.5rem;
+}
+
+.actions-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.view-btn {
+  color: #2563eb;
+}
+
+.view-btn:hover {
+  color: #1d4ed8;
+}
+
+.edit-btn {
+  color: #059669;
+}
+
+.edit-btn:hover {
+  color: #047857;
+}
+
+.delete-btn {
+  color: #dc2626;
+}
+
+.delete-btn:hover {
+  color: #b91c1c;
+}
+
+.email-btn {
+  color: #9333ea;
+}
+
+.email-btn:hover {
+  color: #7c3aed;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .leads-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+  
+  .leads-title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .table-cell {
+    padding: 0.75rem 1rem;
+  }
+  
+  .header-cell {
+    padding: 0.75rem 1rem;
+  }
+  
+  .actions-container {
+    gap: 0.25rem;
+  }
+  
+  .progress-bar {
+    width: 3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .leads-container {
+    gap: 1rem;
+  }
+  
+  .table-cell,
+  .header-cell {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+  
+  .leads-title {
+    font-size: 1.25rem;
+  }
+  
+  .category-badge {
+    font-size: 0.75rem;
+    padding: 0.125rem 0.5rem;
+  }
+  
+  .progress-text {
+    font-size: 0.75rem;
+    min-width: 2rem;
+  }
+}
