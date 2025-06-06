@@ -1,0 +1,11 @@
+{
+  "projects": [
+    {
+      "src": "lead-management-system/",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ]
+}
